@@ -1,0 +1,269 @@
+46 Simple Python Exercises
+
+This is version 0.45 of a collection of simple Python exercises constructed (but in many cases only found and collected) by Torbjörn Lager (torbjorn.lager@ling.gu.se). Most of them involve characters, words and phrases, rather than numbers, and are therefore suitable for students interested in language rather than math.
+--------------------------------------------------------------------------------------------------------
+Very simple exercises
+
+01. Define una función max() que tome dos números como argumentos y devuelva el mayor de ellos. Utiliza sentencias del tipo if-then-else.
+
+02. Define una función max_de_tres() que tome tres números como argumento y devuelva el mayor de ellos.
+
+03. Define una función que compute la longitud de una lista o una cadena de texto.
+
+04. Escribe una función que tome un carácter (i.e. una 'string' de longitud 1) y devuelva True si es una vocal, y False si no es así.
+
+05. Escribe una función traduce() que convierta un texto en algo que se llama "rövarspråket" (En sueco, el "lenguaje de los ladrones"). 
+Consiste en duplicar cada consonante y colocar en medio la letra "o". Por ejemplo:
+
+>>>traduce("estamos en el moliere")
+esostotamomosos enon elol momololierore
+
+06. Define una función suma() y otra producto() que sume y multiplique, respecticamente, todos los números de una lista. Por ejemplo:
+
+>>>suma([1, 2, 3, 4]) 
+10
+
+>>>producto([1, 2, 3, 4])
+24.
+
+07. Define una función revertir() que compute el reverso de una cadena de texto (string). Por ejemplo, revertir("colegio moliere") debería devolver "ereilom oigeloc".
+
+08. Define una función es_palindromo() que reconozca palíndromos (i.e. palabras que se leen igual de izquierda-derecha que de derecha-izquierda). 
+Por ejemplo:
+
+>>> es_palindromo("radar")
+True.
+
+09. Escribe una función pertenece() que lea un valor (ya sea un número, un carácter, etc.) x de una lista y devuelva True si x pertenece a la lista, en caso contrario devolverá False. Por ejemplo:
+
+>>>pertenece('er',['er','y','ui'])
+True
+
+>>>pertenece('fg',['er','y','ui'])
+False
+
+10. Define una función solapados() que lea dos listas y devuelva True si, al menos, tienen un miembro en común, en caso contrario False. 
+Puedes usar la función del ejercicio 09 pertence(), o el operador 'in'. Pero para este ejercicio deberías escribirla, también, usando dos bucles for anidados. Por ejemplo:
+
+>>>solapados(['a','b'],['l','z'])
+False
+
+>>>solapados(['a','b'],['k','b'])
+True
+
+
+11. Define una función genera_n_letras() que tome un número entero n, un carácter c, y devuelva el carácter c, n veces. Por ejemplo:
+
+>>>genera_n_letras(5,"x")
+xxxxx
+
+12.Define un procedimiento histograma() que tome una lista de números enteros e imprima un histograma por pantalla. Por ejemplo:
+
+>>>histogram([4, 9, 7])
+
+****
+*********
+*******
+
+13. La función max() del ejercicio 1) y la función max_de_tres() del ejercicio 2) sólo sirven para dos o tres números, respectivamente. 
+Pero supongamos que tenemos muchos más números, o que no sabemos a priori cuántos son. Escribe una función max_en_lista() que tome una lista de números y devuelva el mayor.
+
+14. Escribe un programa que convierta una lista de palabras, en otra lista con números que representen la longitud de las palabras correspondientes.
+
+15. Escribe una función encontrar_palabraLarga() que tome una lista de palabras y devuelva la longitud de la más larga. Por ejemplo:
+
+>>> encontrar_palabraLarga(['peso','tri','murcielago'])
+10
+
+>>> encontrar_palabraLarga(['peso','trivvvvvvvvv','murcielago'])
+12
+
+16. Escribe una función filtrar_palabraLarga() que tome una lista de palabras, un número entero n y devuelva la lista de palabras cuya longitud es mayor que n. Por ejemplo:
+
+>>> filtrar_palabra_larga(3,['hi','hier','hierro','hierros'])
+['hier', 'hierro', 'hierros']
+
+>>> filtrar_palabra_larga(4,['hi','hier','hierro','hierros'])
+['hierro', 'hierros']
+
+17. Escribe una versión del reconocedor de palíndromos (ej. 08) que también acepte frases palíndromas. Por ejemplo:
+
+>>> es_palindromo("Go hang a salami I'm a lasagna hog")
+True
+
+>>> es_palindromo("I roamed under it as a tired nude Maori")
+True
+
+>>> es_palindromo("Was it a rat I saw?")
+False
+
+Los signos de puntuación, las mayúsculas y los espacios son ignorados.
+
+18. Un pangrama o frase holoalfabética es un texto que usa todas las letras posibles del alfabeto de un idioma. Por ejemplo: "Benjamín pidió una bebida de kiwi y fresa. Noé, sin vergüenza, la más exquisita champaña del menú"; "El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja". Debes crear una función que compruebe que una determinada oración es o no un pangrama.
+
+19."Un elefante se balanceba sobre la tela de una araña, como veían que resistía fueron a llamar a otro elefante..." 
+El verso se repite y cada vez aparece un nuevo elefante. La idea es llegar hasta los 99 elefantes y parar. Tu tarea consistirá en construir una función que genere todos los versos.
+
+20.Represent a small bilingual lexicon as a Python dictionary in the following fashion {"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"år"} and use it to translate your Christmas cards from English into Swedish. That is, write a function translate() that takes a list of English words and returns a list of Swedish words.
+
+21.Write a function char_freq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Python dictionary. Try it with something like char_freq("abbabcbdbabdbdbabababcbcbab").
+
+22.In cryptography, a Caesar cipher is a very simple encryption techniques in which each letter in the plain text is replaced by a letter some fixed number of positions down the alphabet. For example, with a shift of 3, A would be replaced by D, B would become E, and so on. The method is named after Julius Caesar, who used it to communicate with his generals. ROT-13 ("rotate by 13 places") is a widely used example of a Caesar cipher where the shift is 13. In Python, the key for ROT-13 may be represented by means of the following dictionary:
+
+key = {'a':'n', 'b':'o', 'c':'p', 'd':'q', 'e':'r', 'f':'s', 'g':'t', 'h':'u', 
+       'i':'v', 'j':'w', 'k':'x', 'l':'y', 'm':'z', 'n':'a', 'o':'b', 'p':'c', 
+       'q':'d', 'r':'e', 's':'f', 't':'g', 'u':'h', 'v':'i', 'w':'j', 'x':'k',
+       'y':'l', 'z':'m', 'A':'N', 'B':'O', 'C':'P', 'D':'Q', 'E':'R', 'F':'S', 
+       'G':'T', 'H':'U', 'I':'V', 'J':'W', 'K':'X', 'L':'Y', 'M':'Z', 'N':'A', 
+       'O':'B', 'P':'C', 'Q':'D', 'R':'E', 'S':'F', 'T':'G', 'U':'H', 'V':'I', 
+       'W':'J', 'X':'K', 'Y':'L', 'Z':'M'}
+Your task in this exercise is to implement an encoder/decoder of ROT-13. Once you're done, you will be able to read the following secret message:
+
+   Pnrfne pvcure? V zhpu cersre Pnrfne fnynq!
+Note that since English has 26 characters, your ROT-13 program will be able to both encode and decode texts written in English.
+
+23.Define a simple "spelling correction" function correct() that takes a string and sees to it that 1) two or more occurrences of the space character is compressed into one, and 2) inserts an extra space after a period if the period is directly followed by a letter. E.g. correct("This   is  very funny  and    cool.Indeed!") should return "This is very funny and cool. Indeed!" Tip: Use regular expressions!
+
+The third person singular verb form in English is distinguished by the suffix -s, which is added to the stem of the infinitive form: run -> runs. A simple set of rules can be given as follows:
+
+If the verb ends in y, remove it and add ies
+If the verb ends in o, ch, s, sh, x or z, add es
+By default just add s
+Your task in this exercise is to define a function make_3sg_form() which given a verb in infinitive form returns its third person singular form. Test your function with words like try, brush, run and fix. Note however that the rules must be regarded as heuristic, in the sense that you must not expect them to work for all cases. Tip: Check out the string method endswith().
+
+In English, the present participle is formed by adding the suffix -ing to the infinite form: go -> going. A simple set of heuristic rules can be given as follows:
+
+If the verb ends in e, drop the e and add ing (if not exception: be, see, flee, knee, etc.)
+If the verb ends in ie, change ie to y and add ing
+For words consisting of consonant-vowel-consonant, double the final letter before adding ing
+By default just add ing
+Your task in this exercise is to define a function make_ing_form() which given a verb in infinitive form returns its present participle form. Test your function with words such as lie, see, move and hug. However, you must not expect such simple rules to work for all cases.
+
+--------------------------------------------------------------------------------------------------
+Higher order functions and list comprehensions
+
+Using the higher order function reduce(), write a function max_in_list() that takes a list of numbers and returns the largest one. Then ask yourself: why define and call a new function, when I can just as well call the reduce() function directly?
+
+Write a program that maps a list of words into a list of integers representing the lengths of the correponding words. Write it in three different ways: 1) using a for-loop, 2) using the higher order function map(), and 3) using list comprehensions.
+
+Write a function find_longest_word() that takes a list of words and returns the length of the longest one. Use only higher order functions.
+
+Using the higher order function filter(), define a function filter_long_words() that takes a list of words and an integer n and returns the list of words that are longer than n.
+
+Represent a small bilingual lexicon as a Python dictionary in the following fashion {"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"år"} and use it to translate your Christmas cards from English into Swedish. Use the higher order function map() to write a function translate() that takes a list of English words and returns a list of Swedish words.
+
+Implement the higher order functions map(), filter() and reduce(). (They are built-in but writing them yourself may be a good exercise.)
+
+Simple exercises including I/O
+
+Write a version of a palindrome recogniser that accepts a file name from the user, reads each line, and prints the line to the screen if it is a palindrome.
+
+According to Wikipedia, a semordnilap is a word or phrase that spells a different word or phrase backwards. ("Semordnilap" is itself "palindromes" spelled backwards.) Write a semordnilap recogniser that accepts a file name (pointing to a list of words) from the user and finds and prints all pairs of words that are semordnilaps to the screen. For example, if "stressed" and "desserts" is part of the word list, the the output should include the pair "stressed desserts". Note, by the way, that each pair by itself forms a palindrome!
+
+Write a procedure char_freq_table() that, when run in a terminal, accepts a file name from the user, builds a frequency listing of the characters contained in the file, and prints a sorted and nicely formatted character frequency table to the screen.
+
+The International Civil Aviation Organization (ICAO) alphabet assigns code words to the letters of the English alphabet acrophonically (Alfa for A, Bravo for B, etc.) so that critical combinations of letters (and numbers) can be pronounced and understood by those who transmit and receive voice messages by radio or telephone regardless of their native language, especially when the safety of navigation or persons is essential. Here is a Python dictionary covering one version of the ICAO alphabet:
+
+d = {'a':'alfa', 'b':'bravo', 'c':'charlie', 'd':'delta', 'e':'echo', 'f':'foxtrot',
+     'g':'golf', 'h':'hotel', 'i':'india', 'j':'juliett', 'k':'kilo', 'l':'lima',
+     'm':'mike', 'n':'november', 'o':'oscar', 'p':'papa', 'q':'quebec', 'r':'romeo',
+     's':'sierra', 't':'tango', 'u':'uniform', 'v':'victor', 'w':'whiskey', 
+     'x':'x-ray', 'y':'yankee', 'z':'zulu'}
+Your task in this exercise is to write a procedure speak_ICAO() able to translate any text (i.e. any string) into spoken ICAO words. You need to import at least two libraries: os and time. On a mac, you have access to the system TTS (Text-To-Speech) as follows: os.system('say ' + msg), where msg is the string to be spoken. (Under UNIX/Linux and Windows, something similar might exist.) Apart from the text to be spoken, your procedure also needs to accept two additional parameters: a float indicating the length of the pause between each spoken ICAO word, and a float indicating the length of the pause between each word spoken.
+
+A hapax legomenon (often abbreviated to hapax) is a word which occurs only once in either the written record of a language, the works of an author, or in a single text. Define a function that given the file name of a text will return all its hapaxes. Make sure your program ignores capitalization.
+
+Write a program that given a text file will create a new text file in which all the lines from the original file are numbered from 1 to n (where n is the number of lines in the file).
+
+Write a program that will calculate the average word length of a text stored in a file (i.e the sum of all the lengths of the word tokens in the text, divided by the number of word tokens).
+
+Write a program able to play the "Guess the number"-game, where the number to be guessed is randomly chosen between 1 and 20. (Source: http://inventwithpython.com) This is how it should work when run in a terminal:
+
+>>> import guess_number
+Hello! What is your name?
+Torbjörn
+Well, Torbjörn, I am thinking of a number between 1 and 20.
+Take a guess.
+10
+Your guess is too low.
+Take a guess.
+15
+Your guess is too low.
+Take a guess.
+18
+Good job, Torbjörn! You guessed my number in 3 guesses!
+An anagram is a type of word play, the result of rearranging the letters of a word or phrase to produce a new word or phrase, using all the original letters exactly once; e.g., orchestra = carthorse, A decimal point = I'm a dot in place. Write a Python program that, when started 1) randomly picks a word w from given list of words, 2) randomly permutes w (thus creating an anagram of w), 3) presents the anagram to the user, and 4) enters an interactive loop in which the user is invited to guess the original word. It may be a good idea to work with (say) colour words only. The interaction with the program may look like so:
+
+>>> import anagram
+Colour word anagram: onwbr
+Guess the colour word!
+black
+Guess the colour word!
+brown
+Correct!
+In a game of Lingo, there is a hidden word, five characters long. The object of the game is to find this word by guessing, and in return receive two kinds of clues: 1) the characters that are fully correct, with respect to identity as well as to position, and 2) the characters that are indeed present in the word, but which are placed in the wrong position. Write a program with which one can play Lingo. Use square brackets to mark characters correct in the sense of 1), and ordinary parentheses to mark characters correct in the sense of 2). Assuming, for example, that the program conceals the word "tiger", you should be able to interact with it in the following way:
+
+>>> import lingo
+snake
+Clue: snak(e)
+fiest
+Clue: f[i](e)s(t)
+times
+Clue: [t][i]m[e]s
+tiger
+Clue: [t][i][g][e][r]
+Somewhat harder exercises
+
+A sentence splitter is a program capable of splitting a text into sentences. The standard set of heuristics for sentence splitting includes (but isn't limited to) the following rules:
+
+Sentence boundaries occur at one of "." (periods), "?" or "!", except that
+
+Periods followed by whitespace followed by a lower case letter are not sentence boundaries.
+Periods followed by a digit with no intervening whitespace are not sentence boundaries.
+Periods followed by whitespace and then an upper case letter, but preceded by any of a short list of titles are not sentence boundaries. Sample titles include Mr., Mrs., Dr., and so on.
+Periods internal to a sequence of letters with no adjacent whitespace are not sentence boundaries (for example, www.aptex.com, or e.g).
+Periods followed by certain kinds of punctuation (notably comma and more periods) are probably not sentence boundaries.
+Your task here is to write a program that given the name of a text file is able to write its content with each sentence on a separate line. Test your program with the following short text: Mr. Smith bought cheapsite.com for 1.5 million dollars, i.e. he paid a lot for it. Did he mind? Adam Jones Jr. thinks he didn't. In any case, this isn't true... Well, with a probability of .9 it isn't. The result should be:
+
+Mr. Smith bought cheapsite.com for 1.5 million dollars, i.e. he paid a lot for it.
+Did he mind?
+Adam Jones Jr. thinks he didn't.
+In any case, this isn't true...
+Well, with a probability of .9 it isn't.
+
+An anagram is a type of word play, the result of rearranging the letters of a word or phrase to produce a new word or phrase, using all the original letters exactly once; e.g., orchestra = carthorse. Using the word list at http://www.puzzlers.org/pub/wordlists/unixdict.txt, write a program that finds the sets of words that share the same characters that contain the most words in them.
+
+Your task in this exercise is as follows:
+
+Generate a string with N opening brackets ("[") and N closing brackets ("]"), in some arbitrary order.
+Determine whether the generated string is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+Examples:
+
+   []        OK   ][        NOT OK
+   [][]      OK   ][][      NOT OK
+   [[][]]    OK   []][[]    NOT OK
+
+A certain childrens game involves starting with a word in a particular category. Each participant in turn says a word, but that word must begin with the final letter of the previous word. Once a word has been given, it cannot be repeated. If an opponent cannot give a word in the category, they fall out of the game. For example, with "animals" as the category,
+
+Child 1: dog 
+Child 2: goldfish
+Child 1: hippopotamus
+Child 2: snake
+...
+Your task in this exercise is as follows: Take the following selection of 70 English Pokemon names (extracted from Wikipedia's list of Pokemon) and generate the/a sequence with the highest possible number of Pokemon names where the subsequent name starts with the final letter of the preceding name. No Pokemon name is to be repeated.
+
+audino bagon baltoy banette bidoof braviary bronzor carracosta charmeleon
+cresselia croagunk darmanitan deino emboar emolga exeggcute gabite
+girafarig gulpin haxorus heatmor heatran ivysaur jellicent jumpluff kangaskhan
+kricketune landorus ledyba loudred lumineon lunatone machamp magnezone mamoswine
+nosepass petilil pidgeotto pikachu pinsir poliwrath poochyena porygon2
+porygonz registeel relicanth remoraid rufflet sableye scolipede scrafty seaking
+sealeo silcoon simisear snivy snorlax spoink starly tirtouga trapinch treecko
+tyrogue vigoroth vulpix wailord wartortle whismur wingull yamask
+
+An alternade is a word in which its letters, taken alternatively in a strict sequence, and used in the same order as the original word, make up at least two other words. All letters must be used, but the smaller words are not necessarily of the same length. For example, a word with seven letters where every second letter is used will produce a four-letter word and a three-letter word. Here are two examples:
+
+  "board": makes "bad" and "or".
+  "waists": makes "wit" and "ass".
+
+Using the word list at http://www.puzzlers.org/pub/wordlists/unixdict.txt, write a program that goes through each word in the list and tries to make two smaller words using every second letter. The smaller words must also be members of the list. Print the words to the screen in the above fashion.
